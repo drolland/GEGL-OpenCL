@@ -1,3 +1,6 @@
+examples/gegl-video
+perf/test-init
+/nbproject
 *.orig
 *.rej
 *.sw?
