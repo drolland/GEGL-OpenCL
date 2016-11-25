@@ -50,9 +50,9 @@ sub parse_debug_time {
             last;
         }
     }
-    #print "Intermediate Total = ", $tot_time, "s\n";
-    #print "Intermediate Process = ", $process_time, "s\n";
-    #print "Intermediate Operation = ", $op_time, "s\n"; #DEBUG
+    print "Intermediate Total = ", $tot_time, "s\n";
+    print "Intermediate Process = ", $process_time, "s\n";
+    print "Intermediate Operation = ", $op_time, "s\n"; #DEBUG
 
     return ($tot_time, $process_time, $op_time);
 }

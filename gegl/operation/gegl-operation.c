@@ -168,7 +168,8 @@ gegl_operation_process (GeglOperation        *operation,
   }
 
   g_return_val_if_fail (klass->process, FALSE);
-
+  
+ 
   return klass->process (operation, context, output_pad, result, level);
 }
 
@@ -317,9 +318,11 @@ gegl_operation_prepare (GeglOperation *self)
   /* build OpenCL kernel */
   if (!klass->cl_data)
   {
+      
     const gchar *cl_source = gegl_operation_class_get_key (klass, "cl-source");
     if (cl_source)
       {
+        
         char *name = strdup (klass->name);
         const char *kernel_name[] = {name, NULL};
         char *k;
@@ -333,7 +336,9 @@ gegl_operation_prepare (GeglOperation *self)
         klass->cl_data = gegl_cl_compile_and_build (cl_source, kernel_name);
         free (name);
       }
+    
   }
+ 
 
   if (klass->prepare)
     klass->prepare (self);

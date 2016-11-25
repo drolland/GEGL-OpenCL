@@ -692,6 +692,7 @@ void           gegl_node_set_passthrough (GeglNode      *node,
                                           gboolean       passthrough);
 
 
+
 G_END_DECLS
 
 #endif /* __GEGL_NODE_H__ */

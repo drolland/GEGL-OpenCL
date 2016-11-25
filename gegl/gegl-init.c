@@ -226,6 +226,8 @@ void
 gegl_init (gint    *argc,
            gchar ***argv)
 {
+  
+    
   GOptionContext *context;
   GError         *error = NULL;
   static gboolean initialized = FALSE;
@@ -247,6 +249,13 @@ gegl_init (gint    *argc,
     }
 
   g_option_context_free (context);
+  
+  g_info("Gegl-OpenCL Initialized");
+  if ( gegl_cl_is_accelerated () )
+      g_info("OpenCL is Enabled");
+  else
+      g_info("OpenCL is Disabled");
+  
 }
 
 static gchar    *cmd_gegl_swap           = NULL;
@@ -295,6 +304,8 @@ static const GOptionEntry cmd_entries[]=
       N_("Disable OpenCL"), NULL
     },
     { NULL }
+    
+    
 };
 
 GOptionGroup *
